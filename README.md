@@ -1,4 +1,4 @@
-# Fatemeh-Zakeri
+# KNN Daily 30 m Snow Cover Generation
 
 KNN Daily 30 m Snow Cover Generation is composed of a main function named KNNSnowGeneration.mat for ranking learning dates based on their closeness. The second function is named GeneratingImages.mat for visulization and saving the generated binary 30 m snow cover maps.
 
