@@ -1,7 +1,8 @@
-function [ResultIndAll]=KNNSnowGeneration(QueryDates,LearningDates,Weights);
+function [ResultIndAll,ErrorSTD,ErrorMean]=KNNSnowGeneration(QueryDates,LearningDates,Weights);
 
 % KNN Daily 30 m Snow Cover Generation is composed of a main function named KNNSnowGeneration.mat for ranking learning dates based on their closeness.
-% 
+% It also provide the average of the similarity metric over the candidates (a scalar),
+%and the standard deviation of the similarity metric over the candidates (a scalar)
 % KNNSnowGeneration needes two main imports and one otional import.
 % 
 % The first import in the funtion is a table named QueryDates (needed).
@@ -70,6 +71,8 @@ AllW(:,184)=wClosestLandsat;
 
 SumWeights=sum(AllW(1,:));
 AllW=AllW./SumWeights;
+ErrorMean=zeros(size(QueryDates,1),size(LearningDates,1)+1);
+ErrorSTD=zeros(size(QueryDates,1),size(LearningDates,1)+1);
 % the learning database are ranked based on a criterion that quantifies their distance to a given query date
 for i=1:size(A,1)
     A11=A(i,:);
@@ -81,12 +84,24 @@ for i=1:size(A,1)
     A4=reshape(A4,size(A3,1),size(A3,2));
     A4=A4.*AllW;
     A5=sum(A4,2,'omitnan');
+    %STD
+    A3_1=cellfun(@(x) std(x,0,'all','omitnan'),A2,'UniformOutput',false);
+    A4_1=[A3_1{:}];
+    A4_1=reshape(A4_1,size(A3_1,1),size(A3_1,2));
+    A4_1=A4_1.*AllW;
+    A5_1=sum(A4_1,2,'omitnan');
+    %
     [B1,I] = sort(A5);
  
     Result1=LearningDates.Dates(I);
    
     ResultInd(i,2:end)=(Result1)';
     ResultInd(i,1)=QueryDates.Dates(i,1);
+    
+    ErrorMean(i,2:end)=(B1)';
+    ErrorMean(i,1)=QueryDates.Dates(i,1);
+        ErrorSTD(i,2:end)=(A5_1(I))';
+    ErrorSTD(i,1)=QueryDates.Dates(i,1);
 end
 ResultIndAll=ResultInd;
 
