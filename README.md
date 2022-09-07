@@ -59,6 +59,7 @@ Creating a tiff image with 2 bands. The first band: is the percentage of clear-s
  - Shadow Dates: a matrix containing Shadow dates belonging to the Shadow images, respectively.
  
 - Cloud images: a cell containing Cloud images. The Cloud images could be obtained using Landsat Quality Band, or in Sentinel-2 images, it can be obtained using the SCL band. 
+- Cloud Dates: a matrix containing Cloud dates belonging to the Cloud images, respectively.
 
 - destinationFolder: The destination folder address for saving generated tiff images.
 
