@@ -52,16 +52,16 @@ Creating a tiff image with 2 bands. The first band: is the percentage of clear-s
 
 3-2)Input: 
 
--Ranked Learning Dates per Each Query Date: This is the output of the KNNSnowGeneration.m
+- Ranked Learning Dates per Each Query Date: This is the output of the KNNSnowGeneration.m
 
--Shadow images: a cell containing Shadow images. The Shadow images could be created using Google Earth Engine and SRTM 30 m DEM.
+- Shadow images: a cell containing Shadow images. The Shadow images could be created using Google Earth Engine and SRTM 30 m DEM.
 
- -Shadow Dates: a matrix containing Shadow dates belonging to the Shadow images, respectively.
+ - Shadow Dates: a matrix containing Shadow dates belonging to the Shadow images, respectively.
  
--Cloud images: a cell containing Cloud images. The Cloud images could be obtained using Landsat Quality Band, or in Sentinel-2 images, it can be obtained using the SCL band. 
+- Cloud images: a cell containing Cloud images. The Cloud images could be obtained using Landsat Quality Band, or in Sentinel-2 images, it can be obtained using the SCL band. 
 
--destinationFolder: The destination folder address for saving generated tiff images.
+- destinationFolder: The destination folder address for saving generated tiff images.
 
- -spatial referencing object: spatial referencing object belongs to one of the imported Landsat images.
+- spatial referencing object: spatial referencing object belongs to one of the imported Landsat images.
  
 - Information about GeoTIFF file:  Information about GeoTIFF file belongs to one of the imported Landsat images.
