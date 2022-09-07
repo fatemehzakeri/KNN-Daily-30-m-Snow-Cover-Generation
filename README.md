@@ -8,13 +8,13 @@ It is composed of three functions that are explained as follows:
 
 1) first function: KNNSnowGeneration.m
 
-1-1) The Output: 
+1-1) Output: 
 
 -ranked learning dates (the dates that both climate, auxiliary, and almost clear-sky 30 m Landsat data is available) based on their closeness to the query date that only climate and auxiliary data is available. 
 -the average of the similarity metric over the candidates (a scalar)
 -the standard deviation of the similarity metric over the candidates (a scalar)
 
-1-2) The imports:
+1-2) Inputs:
 
 - a table named QueryDates (needed):
 The rows are exch Query Dates. 
@@ -30,11 +30,11 @@ The  Weights table is composed of the weights belongs to: TmaxShortTemporal-neig
 
 2) second function: GeneratingImages.m 
 
-2-1) the Output:
+2-1) Output:
 
 Saving the generated binary or NDSI 30 m snow cover maps with tiff format.
 
-2-2) Imports:
+2-2) Inputs:
 - Landsat images: a cell containing either binary or NDSI Landsat/Sentinel images.
  -Landsat Dates: a matrix containing Landsat/Sentinel dates belong to the Landsat images, respectively.
  -spatial referencing object: spatial referencing object belongs to one of the imported Landsat images.
@@ -47,14 +47,15 @@ Saving the generated binary or NDSI 30 m snow cover maps with tiff format.
 
 3) third function: CreatClearShdowCloudBands.m
 
-3-1) The Output: 
+3-1) Output: 
 Creating a tiff image with 2 bands. The first band: is the percentage of clear-sky candidates per pixel (a map), and the second band is the percentage of candidates per pixel that are not under the shadow (a map). 
-3-2)The inputs: 
+
+3-2)Input: 
+
 -Ranked Learning Dates per Each Query Date: This is the output of the KNNSnowGeneration.m  
 -Shadow images: a cell containing Shadow images. The Shadow images could be created using Google Earth Engine and SRTM 30 m DEM.
  -Shadow Dates: a matrix containing Shadow dates belonging to the Shadow images, respectively.
 -Cloud images: a cell containing Cloud images. The Cloud images could be obtained using Landsat Quality Band, or in Sentinel-2 images, it can be obtained using the SCL band. 
--Cloud images, 
 -destinationFolder: The destination folder address for saving generated tiff images.
  -spatial referencing object: spatial referencing object belongs to one of the imported Landsat images.
 - Information about GeoTIFF file:  Information about GeoTIFF file belongs to one of the imported Landsat images.
