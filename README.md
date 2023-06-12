@@ -1,3 +1,8 @@
+Attention:
+When using the "Download zip" button, please ensure that you download the zip subfolders separately.
+
+
+
 Introduction:
 
 This method generates binary or NDSI daily 30 m Landsat snow cover maps using climate, environmental, and satellite data. It is based on learning from the dates that Landsat or Sentinel-2 data is available for mapping snow for those dates without satellite data. 
