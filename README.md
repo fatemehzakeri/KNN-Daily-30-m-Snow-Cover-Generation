@@ -73,5 +73,5 @@ Creating a tiff image with 2 bands. The first band: is the percentage of clear-s
 - Information about GeoTIFF file:  Information about GeoTIFF file belongs to one of the imported Landsat images.
 - number of candidates: is the number of best candidates, it always should be even. Based on our experiments,  if you have more than 300 images, you may use 11, but if you have around 150 images, we suggest using 5.
 
-- Acknowledgments
+Acknowledgments
 - This research is a collaborative effort between Fatemeh Zakeri and Gregoire Mariethoz at the University of Lausanne. For detailed methodology and scientific background, refer to the included PDF document.
