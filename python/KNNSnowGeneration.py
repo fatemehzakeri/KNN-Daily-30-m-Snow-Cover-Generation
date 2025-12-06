@@ -12,7 +12,7 @@ PATH_WEIGHTS  = r"G:\BayesResultXAtMinObjective_converted.npz"  # optional
 OUT_PATH      = r"G:\ResultIndAll_python.npz"
 
 
-# ------------------ VARIABLE ORDER (MATCHES MATLAB) ------------------
+# ------------------ VARIABLE ORDER ------------------
 VAR_NAMES_FULL = [
     'Tmax-59', 'Tmin-59', 'P-59',
     'Tmax-58', 'Tmin-58', 'P-58',
@@ -136,7 +136,7 @@ except FileNotFoundError:
     wTmax = wTmin = wP = 1.0
     wMODIS = wMYD = wShadow = wClosestLandsat = 1.0
 
-# ------------------ BUILD WEIGHT VECTOR (equivalent to AllW(1,:)) ------------------
+# ------------------ BUILD WEIGHT VECTOR  ------------------
 w_full = np.zeros(M_full, dtype=float)
 
 # Long temporal neighbourhood (Tmax/Tmin/P long)
@@ -171,7 +171,7 @@ else:
 
 print("Sum of weights (w_vec):", w_vec.sum())
 
-# ================== KNN DISTANCE COMPUTATION (LIKE MATLAB) ==================
+# ================== KNN DISTANCE COMPUTATION  ==================
 
 if ONLY_FIRST_QUERY:
     q_indices = np.array([0], dtype=int)
@@ -253,4 +253,5 @@ print("\nSaved:", OUT_PATH)
 print("ResultIndAll shape:", ResultIndAll.shape)
 print("ErrorMean shape:", ErrorMean_out.shape)
 print("ErrorSTD shape:", ErrorSTD_out.shape)
+
 print(ResultIndAll[0, :10])
