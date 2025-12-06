@@ -75,3 +75,10 @@ Creating a tiff image with 2 bands. The first band: is the percentage of clear-s
 
 Acknowledgments
 - This research is a collaborative effort between Fatemeh Zakeri and Gregoire Mariethoz at the University of Lausanne. For detailed methodology and scientific background, refer to the included PDF document.
+
+- ## Python Implementation
+
+A Python implementation of the KNN algorithm is available
+in the `python/` folder.  
+See `python/README_python.md` for details.
+
