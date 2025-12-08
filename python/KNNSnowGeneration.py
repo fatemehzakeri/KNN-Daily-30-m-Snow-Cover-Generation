@@ -8,7 +8,7 @@ ONLY_FIRST_QUERY = False
 # ------------------ PATHS ------------------
 PATH_QUERY    = r"G:\QueryDates_converted.npz"
 PATH_LEARN    = r"G:\LearningDates_converted.npz"
-PATH_WEIGHTS  = r"G:\BayesResultXAtMinObjective_converted.npz"  # optional
+PATH_WEIGHTS  = r"G:\BayesResultXAtMinObjective_converted.npz"   # optional
 OUT_PATH      = r"G:\ResultIndAll_python.npz"
 
 
@@ -201,7 +201,7 @@ for idx_q, i in enumerate(q_indices):
 
         Ai = A_all[i]   # (H, W)
 
-        # sanity check
+        # check
         if Ai.shape != B[0].shape:
             raise ValueError(
                 f"Shape mismatch for {name}/{learn_name}: "
@@ -215,14 +215,14 @@ for idx_q, i in enumerate(q_indices):
         mean_k = np.nanmean(diff, axis=(1, 2))  # (NL,)
         std_k  = np.nanstd(diff, axis=(1, 2))   # (NL,)
 
-        # replace NaNs with 0 like in our debug
+        # replace NaNs with 0 
         mean_k = np.where(np.isnan(mean_k), 0.0, mean_k)
         std_k  = np.where(np.isnan(std_k), 0.0, std_k)
 
         dist_mean += mean_k * wj
         dist_std  += std_k * wj
 
-    # sort distances (like [B1,I] = sort(A5))
+    # sort distances 
     order = np.argsort(dist_mean)
     sorted_ld_dates = ld_dates[order]
 
@@ -255,3 +255,4 @@ print("ErrorMean shape:", ErrorMean_out.shape)
 print("ErrorSTD shape:", ErrorSTD_out.shape)
 
 print(ResultIndAll[0, :10])
+
