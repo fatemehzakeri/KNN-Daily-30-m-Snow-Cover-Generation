@@ -1,13 +1,13 @@
-Attention:
+- ## Attention:
 When using the "Download zip" button, please ensure that you download the zip subfolders separately.
 
 
 
-Introduction:
+- ## Introduction:
 
 This method generates binary or NDSI daily 30 m Landsat snow cover maps using climate, environmental, and satellite data. It is based on learning from the dates that Landsat or Sentinel-2 data is available for mapping snow for those dates without satellite data. 
 
-Functions:
+- ## Functions:
 
 It is composed of three functions that are explained as follows:
 
@@ -73,7 +73,7 @@ Creating a tiff image with 2 bands. The first band: is the percentage of clear-s
 - Information about GeoTIFF file:  Information about GeoTIFF file belongs to one of the imported Landsat images.
 - number of candidates: is the number of best candidates, it always should be even. Based on our experiments,  if you have more than 300 images, you may use 11, but if you have around 150 images, we suggest using 5.
 
-Acknowledgments
+- ## Acknowledgments
 - This research is a collaborative effort between Fatemeh Zakeri and Gregoire Mariethoz at the University of Lausanne. For detailed methodology and scientific background, refer to https://doi.org/10.1016/j.rse.2023.113877.
 
 - ## Python Implementation
